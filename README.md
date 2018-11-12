@@ -1,4 +1,4 @@
-# Max Heartrate with 180 Rule
+## Max Aerobic heartrate with 180 Rule
 
 ## Rules:
 * (1). Beginning with a baseline of 180

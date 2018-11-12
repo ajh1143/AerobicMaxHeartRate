@@ -7,6 +7,55 @@
 * (4). Subtract an additional 5 if you've had a minor illness or injury, for each condition
 * (5). If you've been training for at least 2 years, add 5.
 
+## Questionnaire
+```Python
+def questionnaire():
+    age = ask_age()
+    maj_ill = ask_maj_ill()
+    maj_inj = ask_maj_inj()
+    min_ill = ask_min_ill()
+    min_inj = ask_maj_inj()
+    exp = ask_exp()
+    runner = Runner(age, maj_ill, min_ill, maj_inj, min_inj, exp)
+    return runner
+```
+## User Input
+```Python3
+def ask_age():
+    return int(input("Enter your age in numeric form."))
+
+def ask_maj_ill():
+    response = input("Have you ever had a major illness? Enter Yes or No.")
+    if response.lower() =='yes':
+        return True
+    else:
+        return False
+
+def ask_maj_inj():
+    response = input("Have you ever had a major injury? Enter Yes or No.")
+    if response.lower() =='yes':
+        return True
+    else:
+        return False
+def ask_min_ill():
+    response = input("Have you ever had a minor illness? Enter Yes or No.")
+    if response.lower() =='yes':
+        return True
+    else:
+        return False
+def ask_min_ill():
+    response = input("Have you ever had a minor illness? Enter Yes or No.")
+    if response.lower() =='yes':
+        return True
+    else:
+        return False
+def ask_exp():
+    response = int(input("How many years of training do you have? Enter a numeric value."))
+    if response >= 2:
+        return True
+    else:
+        return False
+```
 ## Class
 ```Python3
 class Runner(object):

@@ -22,7 +22,7 @@ class Runner(object):
         self.injury_minor = injury_minor
         self.training_experience = training_experience
 ```
-Calculate Total Score
+## Calculate Total Score
 ```Python3
     def score(self):
         options = self.__dict__
@@ -43,7 +43,7 @@ Calculate Total Score
         return total_score
 ```
 
-## Calculate Max Heartrate
+## Calculate Max Heart Rate
 ```Python3
     def max_heartrate(self, total_score):
         max_rate = self.baseline+total_score

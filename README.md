@@ -7,6 +7,7 @@
 * (4). Subtract an additional 5 if you've had a minor illness or injury, for each condition
 * (5). If you've been training for at least 2 years, add 5.
 
+## Class
 ```Python3
 class Runner(object):
 ```

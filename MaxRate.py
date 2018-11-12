@@ -31,7 +31,7 @@ class Runner(object):
             'illness_major': self.illness_maj(),
             'age': -self.age
         }
-        for k in options:
+        for k in options.keys():
             attrb_switcher[k]
         print(attrb_switcher)
         total_score = sum(attrb_switcher.values())

@@ -71,7 +71,7 @@ class Runner(object):
             return 0
 
     def training_exp(self):
-        if self.training_exp:
+        if self.training_experience:
             return +5
         else:
             return 0

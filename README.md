@@ -1,11 +1,11 @@
 # Max Heartrate with 180 Rule
 
 ## Rules:
-* 1. Beginning with a baseline of 180
-* 2. Subtract your age from the baseline.
-* 3. Subtract an additional 10 if you've had a major illness or injury, for each condition.
-* 4. Subtract an additional 5 if you've had a minor illness or injury, for each condition
-* 5. If you've been training for at least 2 years, add 5.
+* (1). Beginning with a baseline of 180
+* (2). Subtract your age from the baseline.
+* (3). Subtract an additional 10 if you've had a major illness or injury, for each condition.
+* (4). Subtract an additional 5 if you've had a minor illness or injury, for each condition
+* (5). If you've been training for at least 2 years, add 5.
 
 ```Python3
 class Runner(object):

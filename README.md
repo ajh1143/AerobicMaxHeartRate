@@ -35,11 +35,14 @@ def questionnaire():
 def ask_age():
     while True:
         try:
-            user_age = int(input("Enter your age in numeric form."))
-            break
+            response = int(input("Please enter your age."))
+            if response <= 0:
+                print("Please enter a valid age.")
+            else:
+                break
         except ValueError:
-            print("Please enter a valid number.")
-    return user_age
+            print("Please enter a number.")
+    return response
 
 
 def ask_maj_ill():
@@ -94,6 +97,9 @@ def ask_exp():
     while True:
         try:
             response = int(input("How many years of training do you have? Enter a numeric value."))
+            if response < 0:
+                print("Please enter a non-negative number.")
+                ask_exp()
             if response >= 2:
                 return True
             else:

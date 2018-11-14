@@ -21,40 +21,86 @@ def questionnaire():
 ```
 ## User Input
 ```Python3
+def questionnaire():
+    age = ask_age()
+    maj_ill = ask_maj_ill()
+    maj_inj = ask_maj_inj()
+    min_ill = ask_min_ill()
+    min_inj = ask_min_inj()
+    exp = ask_exp()
+    runner = Runner(age, maj_ill, min_ill, maj_inj, min_inj, exp)
+    return runner
+
+
 def ask_age():
-    return int(input("Enter your age in numeric form."))
+    while True:
+        try:
+            user_age = int(input("Enter your age in numeric form."))
+            break
+        except ValueError:
+            print("Please enter a valid number.")
+    return user_age
+
 
 def ask_maj_ill():
+    choices = ['yes','no']
     response = input("Have you ever had a major illness? Enter Yes or No.")
-    if response.lower() =='yes':
+    if response.lower() not in choices:
+        print("Error, please enter Yes or No.")
+        ask_maj_ill()
+    elif response.lower() =='yes':
         return True
     else:
         return False
 
+
 def ask_maj_inj():
+    choices = ['yes','no']
     response = input("Have you ever had a major injury? Enter Yes or No.")
-    if response.lower() =='yes':
+    if response.lower() not in choices:
+        print("Error, please enter Yes or No.")
+        ask_maj_inj()
+    elif response.lower() =='yes':
         return True
     else:
         return False
+
+
 def ask_min_ill():
+    choices = ['yes','no']
     response = input("Have you ever had a minor illness? Enter Yes or No.")
-    if response.lower() =='yes':
+    if response.lower() not in choices:
+        print("Error, please enter Yes or No.")
+        ask_min_ill()
+    elif response.lower() =='yes':
         return True
     else:
         return False
-def ask_min_ill():
-    response = input("Have you ever had a minor illness? Enter Yes or No.")
-    if response.lower() =='yes':
+
+
+def ask_min_inj():
+    choices = ['yes','no']
+    response = input("Have you ever had a minor injury? Enter Yes or No.")
+    if response.lower() not in choices:
+        print("Error, please enter Yes or No.")
+        ask_min_inj()
+    elif response.lower() =='yes':
         return True
     else:
         return False
+
+
 def ask_exp():
-    response = int(input("How many years of training do you have? Enter a numeric value."))
-    if response >= 2:
-        return True
-    else:
-        return False
+    while True:
+        try:
+            response = int(input("How many years of training do you have? Enter a numeric value."))
+            if response >= 2:
+                return True
+            else:
+                return False
+        except ValueError:
+            print("Please enter a valid number of years.")
+
 ```
 ## Class
 ```Python3

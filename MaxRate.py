@@ -164,9 +164,13 @@ def ask_exp():
     while True:
         try:
             response = int(input("How many years of training do you have? Enter a numeric value."))
+            if response < 0:
+                print("Please enter a non-negative number.")
+                ask_exp()
             if response >= 2:
                 return True
             else:
                 return False
         except ValueError:
             print("Please enter a valid number of years.")
+

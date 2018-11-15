@@ -1,7 +1,6 @@
 class Runner(object):
 
-
-
+    
     def __init__(self, age, illness_major, illness_minor, injury_major, injury_minor, training_experience):
         """
         :int age:

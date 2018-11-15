@@ -142,6 +142,45 @@ class Runner(object):
         self.training_experience = training_experience
 ```
 
+## Runner Class Methods
+```Python3
+    def age(self):
+        return self.age
+
+    def illness_maj(self):
+        if self.illness_major:
+            return (-10)
+        else:
+            return 0
+
+    def illness_min(self):
+        if self.illness_minor:
+            return -5
+        else:
+            return 0
+
+    def injury_maj(self):
+        if self.injury_major:
+            return -10
+        else:
+            return 0
+
+    def injury_min(self):
+        if self.injury_minor:
+            return -5
+        else:
+            return 0
+
+    def training_exp(self):
+        if self.training_experience:
+            return +5
+        else:
+            return 0
+
+    def attributes(self):
+        print(self.__dict__)
+```
+
 ## Calculate Total Score     
 Applies conditional logic of '180 Rule' using the instantiated Runner object populated with Max Heart Rate questionnaire with a Python Switch-Case alternative.
 ```Python3

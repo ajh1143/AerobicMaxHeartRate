@@ -26,7 +26,6 @@ def questionnaire():
     exp = ask_exp()
     runner = Runner(age, maj_ill, min_ill, maj_inj, min_inj, exp)
     return runner
-## Pythonic Switch-Case Alternative Framework
 ```
 
 ## Questionnaire Components - Max Heart Rate
@@ -144,7 +143,7 @@ class Runner(object):
 ```
 
 ## Calculate Total Score     
-Applies conditional logic of '180 Rule' using the instantiated Runner object populated with Max Heart Rate questionnaire.
+Applies conditional logic of '180 Rule' using the instantiated Runner object populated with Max Heart Rate questionnaire with a Python Switch-Case alternative.
 ```Python3
     def score(self):
         options = self.__dict__

@@ -213,8 +213,8 @@ def cal_questions(age, heart):
     heart = heart
     sex = ask_sex()
     cals = Calories(sex, age, weight, time, heart)
-    x = cals.binary_sex()
-    print(x)
+    cals_burned = cals.binary_sex()
+    return cals_burned
 
 class Calories(object):
 
@@ -246,10 +246,9 @@ class Calories(object):
 
     def male_cals(self, age, weight, time, hr):
         burned = (((age * 0.2017) - (weight * 0.09036) + (hr * 0.6309) - 55.0969) * time/4.184)
-        return burned
+        print("You burned {} calories.".format(round(burned,2)))
 
 
     def female_cals(self, age, weight, time, hr):
         burned = (((age * 0.074) - (weight * 0.05741) + (hr * 0.4472) - 20.4022) * time / 4.184)
-        return burned
-
+        print("You burned {} calories.".format(round(burned, 2)))

@@ -43,39 +43,46 @@ class Runner(object):
         print("Your max aerobic heart rate is {} BPM".format(max_rate))
         return max_rate
 
+    
     def age(self):
         return self.age
 
+    
     def illness_maj(self):
         if self.illness_major:
             return (-10)
         else:
             return 0
 
+        
     def illness_min(self):
         if self.illness_minor:
             return -5
         else:
             return 0
 
+        
     def injury_maj(self):
         if self.injury_major:
             return -10
         else:
             return 0
 
+        
     def injury_min(self):
         if self.injury_minor:
             return -5
         else:
             return 0
 
+        
     def training_exp(self):
         if self.training_experience:
             return +5
         else:
             return 0
 
+        
     def attributes(self):
         print(self.__dict__)
 
@@ -103,6 +110,7 @@ def ask_age():
         except ValueError:
             print("Please enter a number.")
     return response
+
 
 def ask_maj_ill():
     choices = ['yes','no']
@@ -216,11 +224,14 @@ def cal_questions(age, heart):
     cals_burned = cals.binary_sex()
     return cals_burned
 
+
 class Calories(object):
 
+    
     def attributes(self):
         print(self.__dict__)
 
+        
     def __init__(self, sex, age, weight, duration, heartRate):
         """
         :string sex:
@@ -241,7 +252,6 @@ class Calories(object):
             return self.male_cals(self.age, self.weight, self.duration, self.heartRate)
         else:
             return self.female_cals(self.age, self.weight, self.duration, self.heartRate)
-
 
 
     def male_cals(self, age, weight, time, hr):

@@ -35,13 +35,12 @@ class Runner(object):
             attrb_switcher[k]
         print(attrb_switcher)
         total_score = sum(attrb_switcher.values())
-        print(total_score)
         return total_score
 
     
     def max_heartrate(self, total_score):
         max_rate = self.baseline+total_score
-        print(max_rate)
+        print("Your max aerobic heart rate is {} BPM".format(max_rate))
         return max_rate
 
     

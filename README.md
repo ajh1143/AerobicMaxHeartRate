@@ -156,7 +156,7 @@ class Runner(object):
 ```Python3
     def max_heartrate(self, total_score):
         max_rate = self.baseline+total_score
-        print(max_rate)
+        print("Your max aerobic heart rate is {} BPM".format(max_rate))
         return max_rate
  ```
  

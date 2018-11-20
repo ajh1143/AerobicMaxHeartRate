@@ -1,6 +1,5 @@
 class Runner(object):
 
-    
     def __init__(self, age, illness_major, illness_minor, injury_major, injury_minor, training_experience):
         """
         :int age:
@@ -18,13 +17,14 @@ class Runner(object):
         self.injury_minor = injury_minor
         self.training_experience = training_experience
 
-
     def score(self):
         options = self.__dict__
+        print("Summary:")
         print(options)
+        print("\n")
         attrb_switcher = {
             'baseline': 0,
-            'training_experience':self.training_exp(),
+            'training_experience': self.training_exp(),
             'injury_minor': self.injury_min(),
             'injury_major': self.injury_maj(),
             'illness_minor': self.illness_min(),
@@ -33,66 +33,54 @@ class Runner(object):
         }
         for k in options.keys():
             attrb_switcher[k]
-        print(attrb_switcher)
         total_score = sum(attrb_switcher.values())
         return total_score
 
-    
     def max_heartrate(self, total_score):
-        max_rate = self.baseline+total_score
+        max_rate = self.baseline + total_score
         print("Your max aerobic heart rate is {} BPM".format(max_rate))
         return max_rate
 
-   
     def safe_heartrate(self, max_hr):
         safe_rate = .8*max_hr
         print("Your safe aerobic heart rate is {} BPM".format(round(safe_rate,2)))
-        return max_rate
+        return safe_rate
 
-    
-    
     def age(self):
         return self.age
 
-    
     def illness_maj(self):
         if self.illness_major:
             return (-10)
         else:
             return 0
 
-        
     def illness_min(self):
         if self.illness_minor:
             return -5
         else:
             return 0
 
-        
     def injury_maj(self):
         if self.injury_major:
             return -10
         else:
             return 0
 
-        
     def injury_min(self):
         if self.injury_minor:
             return -5
         else:
             return 0
 
-        
     def training_exp(self):
         if self.training_experience:
             return +5
         else:
             return 0
 
-        
     def attributes(self):
         print(self.__dict__)
-
 
 
 def questionnaire():
@@ -109,7 +97,7 @@ def questionnaire():
 def ask_age():
     while True:
         try:
-            response = int(input("Please enter your age."))
+            response = int(input("Please enter your age.\n"))
             if response <= 0:
                 print("Please enter a valid age.")
             else:
@@ -120,48 +108,48 @@ def ask_age():
 
 
 def ask_maj_ill():
-    choices = ['yes','no']
-    response = input("Have you ever had a major illness? Enter Yes or No.")
+    choices = ['yes', 'no']
+    response = input("Have you ever had a major illness? Enter Yes or No.\n")
     if response.lower() not in choices:
         print("Error, please enter Yes or No.")
         ask_maj_ill()
-    elif response.lower() =='yes':
+    elif response.lower() == 'yes':
         return True
     else:
         return False
 
 
 def ask_maj_inj():
-    choices = ['yes','no']
-    response = input("Have you ever had a major injury? Enter Yes or No.")
+    choices = ['yes', 'no']
+    response = input("Have you ever had a major injury? Enter Yes or No.\n")
     if response.lower() not in choices:
         print("Error, please enter Yes or No.")
         ask_maj_inj()
-    elif response.lower() =='yes':
+    elif response.lower() == 'yes':
         return True
     else:
         return False
 
 
 def ask_min_ill():
-    choices = ['yes','no']
-    response = input("Have you ever had a minor illness? Enter Yes or No.")
+    choices = ['yes', 'no']
+    response = input("Have you ever had a minor illness? Enter Yes or No.\n")
     if response.lower() not in choices:
         print("Error, please enter Yes or No.")
         ask_min_ill()
-    elif response.lower() =='yes':
+    elif response.lower() == 'yes':
         return True
     else:
         return False
 
 
 def ask_min_inj():
-    choices = ['yes','no']
-    response = input("Have you ever had a minor injury? Enter Yes or No.")
+    choices = ['yes', 'no']
+    response = input("Have you ever had a minor injury? Enter Yes or No.\n")
     if response.lower() not in choices:
         print("Error, please enter Yes or No.")
         ask_min_inj()
-    elif response.lower() =='yes':
+    elif response.lower() == 'yes':
         return True
     else:
         return False
@@ -170,7 +158,7 @@ def ask_min_inj():
 def ask_exp():
     while True:
         try:
-            response = int(input("How many years of training do you have? Enter a numeric value."))
+            response = int(input("How many years of training do you have? Enter a numeric value.\n"))
             if response < 0:
                 print("Please enter a non-negative number.")
                 ask_exp()
@@ -185,7 +173,7 @@ def ask_exp():
 def ask_weight():
     while True:
         try:
-            response = int(input("Please enter your weight in integer pounds."))
+            response = int(input("Please enter your weight in integer pounds.\n"))
             if response <= 0:
                 print("Please enter a valid weight.")
             else:
@@ -198,7 +186,7 @@ def ask_weight():
 def ask_duration():
     while True:
         try:
-            response = float(input("Please enter your the duration of your aerobic activity in minutes."))
+            response = float(input("Please enter your the duration of your aerobic activity in minutes.\n"))
             if response <= 0:
                 print("Please enter a valid time.")
             else:
@@ -208,14 +196,13 @@ def ask_duration():
     return response
 
 
-
 def ask_sex():
-    choices = ['male','female']
-    response = input("Please enter your gender in the form: \'male\' or \'female\'")
+    choices = ['male', 'female']
+    response = input("Please enter your gender in the form: \'male\' or \'female\'\n")
     if response.lower() not in choices:
         print("Error, please enter Male or Female.")
         ask_sex()
-    elif response.lower() =='male':
+    elif response.lower() == 'male':
         return 'male'
     else:
         return 'female'
@@ -234,11 +221,9 @@ def cal_questions(age, heart):
 
 class Calories(object):
 
-    
     def attributes(self):
         print(self.__dict__)
 
-        
     def __init__(self, sex, age, weight, duration, heartRate):
         """
         :string sex:
@@ -253,19 +238,21 @@ class Calories(object):
         self.duration = duration
         self.heartRate = heartRate
 
-
     def binary_sex(self):
         if self.sex == 'male':
             return self.male_cals(self.age, self.weight, self.duration, self.heartRate)
         else:
             return self.female_cals(self.age, self.weight, self.duration, self.heartRate)
 
+    def male_cals(self, age, weight, time, max_hr):
+        max_burned = (((age * 0.2017) - (weight * 0.09036) + (max_hr * 0.6309) - 55.0969) * time / 4.184)
+        safe_burned = (((age * 0.2017) - (weight * 0.09036) + (0.8*max_hr * 0.6309) - 55.0969) * time / 4.184)
+        print("You could burn {} calories with a max heart rate.".format(round(max_burned, 2)))
+        print("You could burn {} calories with a safe heart rate.".format(round(safe_burned, 2)))
 
-    def male_cals(self, age, weight, time, hr):
-        burned = (((age * 0.2017) - (weight * 0.09036) + (hr * 0.6309) - 55.0969) * time/4.184)
-        print("You burned {} calories.".format(round(burned,2)))
+    def female_cals(self, age, weight, time, max_hr):
+        max_burned = (((age * 0.074) - (weight * 0.05741) + (max_hr * 0.4472) - 20.4022) * time / 4.184)
+        safe_burned = (((age * 0.074) - (weight * 0.05741) + (0.8*max_hr * 0.4472) - 20.4022) * time / 4.184)
+        print("You could burn {} calories with a max heart rate.".format(round(max_burned, 2)))
+        print("You could burn {} calories with a safe heart rate".format(round(safe_burned, 2)))
 
-
-    def female_cals(self, age, weight, time, hr):
-        burned = (((age * 0.074) - (weight * 0.05741) + (hr * 0.4472) - 20.4022) * time / 4.184)
-        print("You burned {} calories.".format(round(burned, 2)))

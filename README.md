@@ -212,6 +212,15 @@ Use `score()` result to calculate the maximum aerobic heart rate of the user.
         print("Your max aerobic heart rate is {} BPM".format(max_rate))
         return max_rate
  ```
+ 
+ ## Calculate Safe Heart Rate
+ Calculate a safe heart rate by calculating 80% of Max Heart Rate
+ ```Python3
+    def safe_heartrate(self, max_hr):
+        safe_rate = .8*max_hr
+        print("Your safe aerobic heart rate is {} BPM".format(round(safe_rate,2)))
+        return max_rate
+```
 
 ## Calculate Calories Burned At Max Heart Rate
 

@@ -28,7 +28,7 @@ In Part II, we'll then construct a second questionnaire to populate an instance 
 
 
 # PART I - Max Heart Rate
-<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Aerobic/heartbeat3.jpg" class="inline"/><br>    
+<img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/Aerobic/heartbeat3.jpg" class="inline"/><br>    
 *Image Source: https://peterdewit.wordpress.com/tag/heartbeat/
 
 We'll begin by defining a method to procedurally call our subset of question methods to gather information about you, our user.

@@ -1,6 +1,3 @@
-## Fitness    
-
-
 ## Calculate Your Max Heart Rate
 
 Let's construct a quick program to calculate your maximum aerobic heart rate, and use it to find out how many calories you could burn if you maintained it over the duration of your next run. (Spoiler: You **won't** and you also **shouldn't**, you'll **hurt yourself**.) We'll also figure out a safe range, and calculate how many calories you can burn under that condition as well.

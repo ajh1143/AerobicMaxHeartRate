@@ -143,8 +143,7 @@ Return boolean of user's training.
 def ask_exp():
     while True:
         try:
-            response = int(input("How many years of training do you have? 
-                                                Enter a numeric value.\n"))
+            response = int(input("How many years of training do you have? Enter a numeric value.\n"))
             if response < 0:
                 print("Please enter a non-negative number.")
                 ask_exp()
@@ -161,7 +160,8 @@ class Runner(object):
 
 ## Runner Class Constructor
 ```Python3
-    def __init__(self, age, illness_major, illness_minor, injury_major, injury_minor, training_experience):"""
+    def __init__(self, age, illness_major, illness_minor, injury_major, injury_minor, training_experience):
+        """
         :int age:
         :boolean illness_major:
         :boolean illness_minor:
@@ -286,8 +286,7 @@ Return user's integer weight.
 def ask_weight():
     while True:
         try:
-            response = int(input("Please enter your weight in integer pounds.
-                                                                        \n"))
+            response = int(input("Please enter your weight in integer pounds.\n"))
             if response <= 0:
                 print("Please enter a valid weight.")
             else:
@@ -305,8 +304,7 @@ Return user's float exercise duration.
 def ask_duration():
     while True:
         try:
-            response = float(input("Please enter your the duration of your 
-                                           aerobic activity in minutes.\n"))
+            response = float(input("Please enter your the duration of your aerobic activity in minutes.\n"))
             if response <= 0:
                 print("Please enter a valid time.")
             else:
@@ -324,8 +322,7 @@ Return String response of sex category.
 ```Python3
 def ask_sex():
     choices = ['male', 'female']
-    response = input("Please enter your gender in the form: \'male\' or 
-                                                           \'female\'\n")
+    response = input("Please enter your gender in the form: \'male\' or \'female\'\n")
     if response.lower() not in choices:
         print("Error, please enter Male or Female.")
         ask_sex()

@@ -354,30 +354,32 @@ Inputs:
 
 Age, Weight, Time(duration), hr(heart rate)
 ```Python3
-def male_cals(self, age, weight, time, hr):
-    burned = (((age * 0.2017) - (weight * 0.09036) + (hr * 0.6309) - 55.0969)
-                                                              * time / 4.184)
-    print("You burned {} calories.".format(round(burned, 2)))
+    def male_cals(self, age, weight, time, max_hr):
+        max_burned = (((age * 0.2017) - (weight * 0.09036) + (max_hr * 0.6309) - 55.0969) * time / 4.184)
+        safe_burned = (((age * 0.2017) - (weight * 0.09036) + (0.8*max_hr * 0.6309) - 55.0969) * time / 4.184)
+        print("You could burn {} calories with a max heart rate.".format(round(max_burned, 2)))
+        print("You could burn {} calories with a safe heart rate.".format(round(safe_burned, 2)))
 ```
 ## Calorie Calculation - Female
 Inputs:
 
 Age, Weight, Time(duration), hr(heart rate)
 ```Python3
-def female_cals(self, age, weight, time, hr):
-    burned = (((age * 0.074) - (weight * 0.05741) + (hr * 0.4472) - 20.4022) 
-                                                             * time / 4.184)
-    print("You burned {} calories.".format(round(burned, 2)))
+    def female_cals(self, age, weight, time, max_hr):
+        max_burned = (((age * 0.074) - (weight * 0.05741) + (max_hr * 0.4472) - 20.4022) * time / 4.184)
+        safe_burned = (((age * 0.074) - (weight * 0.05741) + (0.8*max_hr * 0.4472) - 20.4022) * time / 4.184)
+        print("You could burn {} calories with a max heart rate.".format(round(max_burned, 2)))
+        print("You could burn {} calories with a safe heart rate".format(round(safe_burned, 2)))
+
 ```
 
 ## Check Sex, Apply Calculation, Get Results
 ```Python3
 def binary_sex(self):
     if self.sex == 'male':
-        return self.male_cals(self.age, self.weight, self.duration, 
-                                                     self.heartRate)
-    else:return self.female_cals(self.age, self.weight, self.duration, 
-                                                      self.heartRate)
+        return self.male_cals(self.age, self.weight, self.duration, self.heartRate)
+    else:
+        return self.female_cals(self.age, self.weight, self.duration, self.heartRate)
 ```
 ### Command Line Interface
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/Aerobic/2.png" class="inline"/><br

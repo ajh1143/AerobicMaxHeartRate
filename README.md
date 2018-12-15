@@ -5,6 +5,7 @@ Let's construct a quick program to calculate your maximum aerobic heart rate, an
 I sincerely hope you choose to eat pie while surrounded by your friends and family this holiday season, rather than think about hypothetical calories.
 
 
+_______________________________________________________________________________________________________________________________________
 ## Heart Rates via The 180 Methodology    
 *Rules*:    
 * Begin with a baseline of 180 beats per minute (bpm)    
@@ -13,6 +14,7 @@ I sincerely hope you choose to eat pie while surrounded by your friends and fami
 * Subtract an additional 5 if you've had a minor illness or injury, for each condition    
 * If you've been training for at least 2 years, add 5.    
 
+_______________________________________________________________________________________________________________________________________
 ## Program Approach    
 ### Part I - Heart Rate:    
 
@@ -23,6 +25,7 @@ In Part I, we'll build a questionnaire method to populate attributes for an inst
 In Part II, we'll then construct a second questionnaire to populate an instance of a class object to calculate the sweet total caloric burn you could achieve if you could maintain your peak level of activity.
 
 
+_______________________________________________________________________________________________________________________________________
 
 # PART I - Max Heart Rate
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/Aerobic/heartbeat3.jpg" class="inline"/><br>    
@@ -259,6 +262,7 @@ Now that we know our max heart rate, we can use it to generate a safer heart rat
 Example: 18, perfect health, 2 years of previous training.
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/Aerobic/1.png" class="inline"/><br>
 
+_______________________________________________________________________________________________________________________________________
 
 # PART II - Calories Burned
 
@@ -384,6 +388,7 @@ def binary_sex(self):
 ### Command Line Interface
 <img src="https://github.com/ajh1143/ajh1143.github.io/blob/master/Images/Aerobic/2.png" class="inline"/><br
 
+_______________________________________________________________________________________________________________________________________
 ## Run It!
 Main
 ```Python3
@@ -394,6 +399,8 @@ if __name__ == '__main__':
     cal_questions(user.age, hr)
 Command Line Interface
 ```
+
+_______________________________________________________________________________________________________________________________________
 ## Full Code:
 ```Python3
 class Runner(object):
